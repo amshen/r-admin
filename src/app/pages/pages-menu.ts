@@ -8,28 +8,25 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'FEATURES',
-    group: true,
-  },
-  {
-    title: 'Auth',
-    icon: 'nb-locked',
+    title: 'Customer Info',
+    link: '/pages/customer',
+    icon: 'nb-person',
     children: [
       {
-        title: 'Login',
+        title: 'Personal Info',
         link: '/auth/login',
       },
       {
-        title: 'Register',
+        title: 'Deposits Account',
         link: '/auth/register',
       },
       {
-        title: 'Request Password',
-        link: '/auth/request-password',
+        title: 'Transactions',
+        link: '/auth/reset-password',
       },
       {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
+        title: 'Payment Instruments',
+        link: '/auth/request-password',
       },
     ],
   },
