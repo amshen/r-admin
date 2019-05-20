@@ -46,7 +46,6 @@ import {
   LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   ThemeSwitcherListComponent,
-  ToggleSettingsButtonComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -57,11 +56,8 @@ import {
   EvaIconsPipe,
 } from './pipes';
 import {
-  OneColumnLayoutComponent,
-  SampleLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
-} from './layouts';
+  LayoutComponent,
+} from './layouts/layout';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
@@ -110,11 +106,7 @@ const COMPONENTS = [
   FooterComponent,
   SearchInputComponent,
   ThemeSettingsComponent,
-  OneColumnLayoutComponent,
-  SampleLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
-  ToggleSettingsButtonComponent,
+  LayoutComponent,
 ];
 
 const ENTRY_COMPONENTS = [

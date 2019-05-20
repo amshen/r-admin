@@ -9,12 +9,12 @@ import {
   NbThemeService,
 } from '@nebular/theme';
 
-import { StateService } from '../../../@core/utils';
+import { StateService } from '../../@core/utils';
 
 // TODO: move layouts into the framework
 @Component({
-  selector: 'ngx-sample-layout',
-  styleUrls: ['./sample.layout.scss'],
+  selector: 'ngx-layout',
+  styleUrls: ['./layout.scss'],
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
@@ -57,10 +57,9 @@ import { StateService } from '../../../@core/utils';
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>
-    <ngx-toggle-settings-button></ngx-toggle-settings-button>
   `,
 })
-export class SampleLayoutComponent implements OnDestroy {
+export class LayoutComponent implements OnDestroy {
 
   subMenu: NbMenuItem[] = [
     {
