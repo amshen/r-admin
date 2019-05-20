@@ -1,6 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
-import { takeWhile } from 'rxjs/operators';
+import { takeWhile, withLatestFrom, delay } from 'rxjs/operators';
 import {
+  NbMediaBreakpoint,
+  NbMediaBreakpointsService,
+  NbMenuItem,
   NbMenuService,
   NbSidebarService,
   NbThemeService,
@@ -45,6 +48,7 @@ export class LayoutComponent implements OnDestroy {
 
   constructor(protected stateService: StateService,
               protected menuService: NbMenuService,
+              protected bpService: NbMediaBreakpointsService,
               protected themeService: NbThemeService,
               protected sidebarService: NbSidebarService) {
     this.stateService.onLayoutState()
@@ -56,6 +60,28 @@ export class LayoutComponent implements OnDestroy {
       .subscribe((sidebar: string) => {
         this.sidebar = sidebar;
       });
+
+
+    const isBp = this.bpService.getByName('is');
+    this.menuService.onItemSelect()
+      .pipe(
+        takeWhile(() => this.alive),
+        withLatestFrom(this.themeService.onMediaQueryChange()),
+        delay(20),
+      )
+      .subscribe(([item, [bpFrom, bpTo]]: [any, [NbMediaBreakpoint, NbMediaBreakpoint]]) => {
+
+        if (bpTo.width <= isBp.width) {
+          this.sidebarService.collapse('menu-sidebar');
+        }
+      });
+
+    this.themeService.getJsTheme()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe(theme => {
+        this.currentTheme = theme.name;
+    });
+
   }
 
   ngOnDestroy() {
