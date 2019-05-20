@@ -1,6 +1,5 @@
 <div class="header-container"
-     [class.left]="position === 'normal'"
-     [class.right]="position === 'inverse'">
+     [class.left]="true">
   <div class="title-containter">
     <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
     <div class="title"><span>Origen Admin</span></div>
@@ -10,8 +9,7 @@
 <div class="header-container">
   <nb-actions
     size="medium"
-    [class.right]="position === 'normal'"
-    [class.left]="position === 'inverse'">
+    [class.right]="true">
     <nb-action *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
     </nb-action>
