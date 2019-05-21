@@ -9,30 +9,12 @@ import {
   AnalyticsService,
   StateService,
 } from './utils';
-import { UserData } from './data/users';
-import { UserService } from './mock/users.service';
+import { AdminUserData } from './data/AdminUser';
+import { AdminUserService } from './mock/admin.user.service';
 import { MockDataModule } from './mock/mock-data.module';
 
-const socialLinks = [
-  {
-    url: 'https://github.com/akveo/nebular',
-    target: '_blank',
-    icon: 'socicon-github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'socicon-facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'socicon-twitter',
-  },
-];
-
 const DATA_SERVICES = [
-  { provide: UserData, useClass: UserService },
+  { provide: AdminUserData, useClass: AdminUserService },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
@@ -54,12 +36,6 @@ export const NB_CORE_PROVIDERS = [
       }),
     ],
     forms: {
-      login: {
-        socialLinks: socialLinks,
-      },
-      register: {
-        socialLinks: socialLinks,
-      },
     },
   }).providers,
 
