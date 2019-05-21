@@ -1,7 +1,7 @@
 import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { AdminUser } from '../../../entities/AdminUser';
-import { IAdminUserService } from '../../../interfaces/IAdminUserService';
+import { AdminUser } from '../../entities/AdminUser';
+import { IAdminUserService } from '../../interfaces/IAdminUserService';
 
 @Injectable()
 export class MockAdminUserService implements IAdminUserService {

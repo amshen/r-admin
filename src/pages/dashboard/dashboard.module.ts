@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 
-import { ThemeModule } from '../../@theme/theme.module';
+import { ThemeModule } from '../../app/@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { NbSearchModule } from '@nebular/theme';
 

@@ -1,7 +1,7 @@
 import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { User, UserListView } from '../../entities/User';
-import { IUserService } from '../../interfaces/IUserService';
+import { User, UserListView } from '../entities/User';
+import { IUserService } from '../interfaces/IUserService';
 
 
 @Injectable()

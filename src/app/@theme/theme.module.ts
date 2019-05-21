@@ -40,7 +40,7 @@ import { NbSecurityModule } from '@nebular/security';
 import {
   FooterComponent,
   HeaderComponent,
-} from './components';
+} from '../../controls';
 import {
   CapitalizePipe,
   PluralPipe,

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ThemeModule } from '../../@theme/theme.module';
+import { ThemeModule } from '../../app/@theme/theme.module';
 import { MiscellaneousRoutingModule, routedComponents } from './miscellaneous-routing.module';
 
 @NgModule({

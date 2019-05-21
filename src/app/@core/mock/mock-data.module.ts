@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MockAdminUserService } from '../../services/mock/mock.admin.user.service';
+import { MockAdminUserService } from '../../../services/mock/mock.admin.user.service';
 
 const SERVICES = [
   MockAdminUserService,
