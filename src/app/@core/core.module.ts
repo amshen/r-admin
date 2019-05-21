@@ -8,18 +8,17 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
   AnalyticsService,
   StateService,
-} from './utils';
-import { AdminUserData } from './data/AdminUser';
-import { AdminUserService } from './mock/admin.user.service';
+} from '../services';
+import { MockAdminUserService } from '../services/mock/mock.admin.user.service';
 import { MockDataModule } from './mock/mock-data.module';
 
+// Ask Bayo
 const DATA_SERVICES = [
-  { provide: AdminUserData, useClass: AdminUserService },
+  { provide: MockAdminUserService, useClass: MockAdminUserService },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
   getRole() {
-    // here you could provide any role based on any auth flow
     return observableOf('guest');
   }
 }

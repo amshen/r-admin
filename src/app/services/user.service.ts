@@ -1,12 +1,14 @@
 import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { OrigenUserData, OrigenUser, OrigenUserListView } from '../data/OrigenUser';
+import { User, UserListView } from '../entities/User';
+import { IUserService } from '../interfaces/IUserService';
+
 
 @Injectable()
-export class OrigenUserService extends OrigenUserData {
-  private time: Date = new Date;
+export class UserService implements IUserService {
+  // private time: Date = new Date;
 
-  private users: OrigenUser[] = [
+  private users: User[] = [
       {
         id: '111',
         username: 'amanda@gmail.com',
@@ -57,8 +59,8 @@ export class OrigenUserService extends OrigenUserData {
       },
     ];
 
-  getUsers(): Observable<OrigenUserListView[]> {
-    const listView: OrigenUserListView[] = this.users.map(u => {
+  getUsers(): Observable<UserListView[]> {
+    const listView: UserListView[] = this.users.map(u => {
         return {
           id: u.id,
           username: u.username,
@@ -70,7 +72,7 @@ export class OrigenUserService extends OrigenUserData {
     return observableOf(listView);
   }
 
-  getUserById(id: string): Observable<OrigenUser> {
+  getUserById(id: string): Observable<User> {
     const user = this.users.find(u => u.id == id);
     return observableOf(user);
   }

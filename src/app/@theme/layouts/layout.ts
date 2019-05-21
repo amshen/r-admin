@@ -8,7 +8,7 @@ import {
   NbThemeService,
 } from '@nebular/theme';
 
-import { StateService } from '../../@core/utils';
+import { StateService } from '../../services';
 
 @Component({
   selector: 'ngx-layout',

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NbSidebarService } from '@nebular/theme';
-import { AdminUserData, AdminUser } from '../../../@core/data/AdminUser';
-import { OrigenUserListView } from '../../../@core/data/OrigenUser';
-import { AnalyticsService } from '../../../@core/utils';
+import { AdminUser } from '../../entities/AdminUser';
+import { UserListView } from '../../entities/User';
+import { AnalyticsService } from '../../services';
+import { IAdminUserService } from '../../interfaces/IAdminUserService';
 
 @Component({
   selector: 'ngx-header',
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit {
   userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
   constructor(private sidebarService: NbSidebarService,
-              private adminUserService: AdminUserData,
+              private adminUserService: IAdminUserService,
               private analyticsService: AnalyticsService) {
   }
 
@@ -31,7 +32,7 @@ export class HeaderComponent implements OnInit {
 
     return false;
   }
-  startSearch(): OrigenUserListView[] {
+  startSearch(): UserListView[] {
       this.analyticsService.trackEvent('startSearch');
       return null;
   }

@@ -1,11 +1,12 @@
 import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { AdminUserData, AdminUser } from '../data/AdminUser';
+import { AdminUser } from '../../entities/AdminUser';
+import { IAdminUserService } from '../../interfaces/IAdminUserService';
 
 @Injectable()
-export class AdminUserService extends AdminUserData {
+export class MockAdminUserService implements IAdminUserService {
 
-  private time: Date = new Date;
+  // private time: Date = new Date;
 
   private users: AdminUser[] = [
     { name: 'Nick Jones', picture: 'assets/images/nick.png' },
