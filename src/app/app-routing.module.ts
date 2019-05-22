@@ -8,9 +8,20 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import { PageContainerComponent } from '../pages/page-container/page-container.component';
+import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'pages', loadChildren: '../pages/pages.module#PagesModule' },
+  {
+    path: 'dashboard',
+    component: PageContainerComponent,
+    children: [
+      {
+        path: '',
+        component: DashboardComponent,
+      },
+    ],
+  },
   {
     path: 'auth',
     component: NbAuthComponent,
@@ -41,12 +52,12 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dashboard' },
 ];
 
 const config: ExtraOptions = {
-  useHash: true,
+  useHash: false,
 };
 
 @NgModule({

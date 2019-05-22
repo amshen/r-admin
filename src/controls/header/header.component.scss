@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  $menu-action-separator-color: #3f4550;
 
   .left {
     display: flex;
@@ -49,27 +50,17 @@
       padding: 0 nb-theme(padding);
       font-size: 1.75rem;
       font-weight: nb-theme(font-weight-bolder);
-      @include nb-ltr(border-left, 1px solid nb-theme(separator));
-      @include nb-rtl(border-right, 1px solid nb-theme(separator));
+      @include nb-ltr(border, none);
+      @include nb-rtl(border, none);
       white-space: nowrap;
 
       span {
         font-weight: nb-theme(font-weight-normal);
       }
     }
-  }
-
-  @include nb-for-theme(corporate) {
-    $menu-action-separator-color: #3f4550;
-
     nb-action {
       @include nb-ltr(border-left-color, $menu-action-separator-color);
       @include nb-rtl(border-right-color, $menu-action-separator-color);
-    }
-
-    .header-container .title {
-      @include nb-ltr(border, none);
-      @include nb-rtl(border, none);
     }
   }
 }

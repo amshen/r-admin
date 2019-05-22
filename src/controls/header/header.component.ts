@@ -4,13 +4,14 @@ import { NbSidebarService } from '@nebular/theme';
 import { AdminUser } from '../../entities/AdminUser';
 import { UserListView } from '../../entities/User';
 import { AnalyticsService } from '../../services';
-import { IAdminUserService } from '../../interfaces/IAdminUserService';
+import { AdminUserService } from '../../services/mock';
 
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
+
 export class HeaderComponent implements OnInit {
 
   user: AdminUser;
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
   constructor(private sidebarService: NbSidebarService,
-              private adminUserService: IAdminUserService,
+              private adminUserService: AdminUserService,
               private analyticsService: AnalyticsService) {
   }
 

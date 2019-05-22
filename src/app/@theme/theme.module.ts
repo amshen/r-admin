@@ -40,6 +40,7 @@ import { NbSecurityModule } from '@nebular/security';
 import {
   FooterComponent,
   HeaderComponent,
+  SearchInputComponent,
 } from '../../controls';
 import {
   CapitalizePipe,
@@ -93,6 +94,7 @@ const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   LayoutComponent,
+  SearchInputComponent,
 ];
 
 const ENTRY_COMPONENTS = [
@@ -127,6 +129,7 @@ const NB_THEME_PROVIDERS = [
   declarations: [...COMPONENTS, ...PIPES],
   entryComponents: [...ENTRY_COMPONENTS],
 })
+
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{

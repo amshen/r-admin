@@ -14,10 +14,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SearchInputComponent } from '../controls/search-input/search-input.component';
+import { PageContainerComponent } from '../pages/page-container/page-container.component';
+import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchInputComponent],
+  declarations: [
+    AppComponent,
+    PageContainerComponent,
+    DashboardComponent,
+  ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,7 +34,11 @@ import { SearchInputComponent } from '../controls/search-input/search-input.comp
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
   ],
-  bootstrap: [AppComponent],
+
+  bootstrap: [
+    AppComponent,
+  ],
+
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
